@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PNW Road Trip - Samarth & Prashita</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest: #1a3a2a;
+  --pine: #2d5a3f;
+  --sage: #7a9e7e;
+  --warm: #f5f0e8;
+  --cream: #faf8f4;
+  --stone: #6b7280;
+  --gold: #b8860b;
+  --sky: #4a90d9;
+  --coral: #e8735a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--cream);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  background: linear-gradient(135deg, rgba(26,58,42,0.7), rgba(45,90,63,0.5)),
+    url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1600&q=80') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+
+.hero-content .subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.hero-content .dates {
+  margin-top: 20px;
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 30px;
+  padding: 10px 28px;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* BOOKINGS STRIP */
+.bookings-strip {
+  background: var(--forest);
+  color: white;
+  padding: 40px 0;
+}
+
+.bookings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.booking-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.booking-card .label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 8px;
+}
+
+.booking-card .title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.booking-card .detail {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  line-height: 1.6;
+}
+
+.booking-card .conf {
+  display: inline-block;
+  margin-top: 8px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+
+/* DAY SECTION */
+.day-section {
+  padding: 60px 0 40px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.day-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.day-number {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--forest), var(--pine));
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.day-number .num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.day-number .label {
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.day-info h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--forest);
+  margin-bottom: 4px;
+}
+
+.day-info .date-tag {
+  font-size: 0.85rem;
+  color: var(--stone);
+}
+
+.day-info .weather-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  background: #e8f0f4;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  color: var(--pine);
+}
+
+/* DRIVE BANNER */
+.drive-banner {
+  background: linear-gradient(135deg, var(--forest), var(--pine));
+  border-radius: 14px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 16px 0;
+  color: white;
+}
+
+.drive-banner .icon { font-size: 1.5rem; }
+
+.drive-banner .info {
+  flex: 1;
+}
+
+.drive-banner .route {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.drive-banner .time {
+  font-size: 0.82rem;
+  opacity: 0.8;
+}
+
+.drive-banner .map-btn {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.drive-banner .map-btn:hover { background: rgba(255,255,255,0.25); }
+
+/* PLACE CARD */
+.places-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.place-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.place-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.place-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.place-card .card-body {
+  padding: 18px 20px;
+}
+
+.place-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: var(--forest);
+  margin-bottom: 6px;
+}
+
+.place-card .desc {
+  font-size: 0.85rem;
+  color: var(--stone);
+  margin-bottom: 12px;
+}
+
+.place-card .card-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #e8f0f8;
+  border: 1px solid #c0d4ea;
+  color: #1a5fa8;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.map-link:hover { background: #d0e4f8; }
+
+.tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+
+.tag-free { background: #e8f4eb; color: var(--pine); }
+.tag-fee { background: #fff3e0; color: #b8860b; }
+.tag-warn { background: #fff0f0; color: #c0392b; }
+
+/* HOTEL CARD */
+.hotel-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin: 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+.hotel-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #e8f0f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.hotel-info .name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--forest);
+}
+
+.hotel-info .details {
+  font-size: 0.82rem;
+  color: var(--stone);
+  margin-top: 2px;
+}
+
+.hotel-info .conf-num {
+  font-family: monospace;
+  font-size: 0.78rem;
+  background: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+/* TIPS SECTION */
+.tips-section {
+  background: linear-gradient(135deg, #f5f0e8, #e8eee8);
+  padding: 60px 0;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.tip-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.tip-card .tip-icon { font-size: 1.5rem; margin-bottom: 10px; }
+.tip-card .tip-title { font-weight: 600; font-size: 0.9rem; color: var(--forest); margin-bottom: 6px; }
+.tip-card .tip-desc { font-size: 0.82rem; color: var(--stone); }
+
+/* SECTION TITLE */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--forest);
+  margin-bottom: 8px;
+}
+
+/* FOOTER */
+footer {
+  background: var(--forest);
+  color: white;
+  text-align: center;
+  padding: 40px 0;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .places-grid { grid-template-columns: 1fr; }
+  .hero { height: 50vh; min-height: 350px; }
+  .day-header { flex-direction: column; gap: 12px; }
+  .drive-banner { flex-direction: column; text-align: center; gap: 10px; }
+  .bookings-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <p class="subtitle">Samarth & Prashita</p>
+    <h1>Pacific Northwest Road Trip</h1>
+    <div class="dates">April 18 - 24, 2026</div>
+  </div>
+</div>
+
+<!-- BOOKINGS -->
+<div class="bookings-strip">
+  <div class="container">
+    <div class="bookings-grid">
+      <div class="booking-card">
+        <div class="label">Flights</div>
+        <div class="title">Southwest Airlines</div>
+        <div class="detail">
+          Apr 18: AUS 5:30 AM &rarr; PDX 9:45 AM<br>
+          Apr 24: PDX 3:00 PM &rarr; AUS 10:45 PM
+        </div>
+        <div class="conf">AWOYA7</div>
+      </div>
+      <div class="booking-card">
+        <div class="label">Rental Car</div>
+        <div class="title">Payless - Mid-size SUV</div>
+        <div class="detail">
+          Pick up: Apr 18, 11 AM at PDX<br>
+          Return: Apr 24, 2 PM at PDX
+        </div>
+        <div class="conf">21487113US4</div>
+      </div>
+      <div class="booking-card">
+        <div class="label">Hotels</div>
+        <div class="title">3 Hilton Properties</div>
+        <div class="detail">
+          Portland (2 nights) &bull; Eugene (1 night) &bull; Grants Pass (3 nights)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DAY 1 -->
+<div class="container">
+  <div class="day-section">
+    <div class="day-header">
+      <div class="day-number"><span class="num">1</span><span class="label">DAY</span></div>
+      <div class="day-info">
+        <h2>Arrive Portland</h2>
+        <div class="date-tag">Saturday, April 18</div>
+        <div class="weather-tag">High 61&deg;F | Low 45&deg;F | Possible light rain</div>
+      </div>
+    </div>
+
+    <div class="drive-banner">
+      <div class="icon">&#9992;</div>
+      <div class="info">
+        <div class="route">Austin (AUS) &rarr; Portland (PDX)</div>
+        <div class="time">Arrive 9:45 AM &bull; Pick up car 11:00 AM</div>
+      </div>
+    </div>
+
+    <div class="places-grid">
+      <div class="place-card">
+        <img src="https://images.unsplash.com/photo-1509739159400-42bbc5e10e49?w=800&q=80" alt="Multnomah Falls">
+        <div class="card-body">
+          <h3>Multnomah Falls</h3>
+          <div class="desc">Oregon's tallest waterfall at 620 feet. Two-tiered cascade with an iconic bridge. Just 30 min east of Portland off I-84.</div>
+          <div class="card-footer">
+            <a href="https://maps.google.com/?q=Multnomah+Falls,OR" class="map-link">&#128205; Open in Maps</a>
+            <span class="tag tag-free">Free / No permit in April</span>
+          </div>
+        </div>
+      </div>
+      <div class="place-card">
+        <img src="https://images.unsplash.com/photo-1562310503-a918c4c61e38?w=800&q=80" alt="Trillium Lake">
+        <div class="card-body">
+          <h3>Trillium Lake</h3>
+          <div class="desc">Stunning Mt. Hood reflection views. About 1 hour further from Multnomah Falls. Road may have snow in mid-April.</div>
+          <div class="card-footer">
+            <a href="https://maps.google.com/?q=Trillium+Lake,OR" class="map-link">&#128205; Open in Maps</a>
+            <span class="tag tag-warn">Road may be closed - check ahead</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="drive-banner">
+      <div class="icon">&#127970;</div>
+      <div class="info">
+        <div class="route">Multnomah Falls / Trillium Lake &rarr; Portland</div>
+        <div class="time">~1.5 hrs back to hotel</div>
+      </div>
+    </div>
+
+    <div class="hotel-card">
+      <div class="hotel-icon">&#127976;</div>
+      <div class="hotel-info">
+        <div class="name">Hilton Portland Downtown</div>
+        <div class="details">921 SW 6th Ave, Portland, OR 97204 &bull; Check-in 4 PM</div>
+        <div class="conf-num">Conf #3445779058</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-section">
+    <div class="day-header">
+      <div class="day-number"><span class="num">2</span><span class="label">DAY</span></div>
+      <div class="day-info">
+        <h2>Mt. Rainier Day Trip</h2>
+        <div class="date-tag">Sunday, April 19</div>
+        <div class="weather-tag">Portland 59&deg;F | Rainier ~40&deg;F | Snow at elevation</div>
+      </div>
+    </div>
+
+    <div class="drive-banner">
+      <div class="icon">&#128663;</div>
+      <div class="info">
+        <div class="route">Portland &rarr; Mt. Rainier National Park</div>
+        <div class="time">~2 hr 15 min &bull; 138 miles &bull; Leave by 7 AM</div>
+      </div>
+      <a href="https://maps.google.com/?saddr=Portland,OR&daddr=Mount+Rainier+National+Park,WA" class="map-btn">&#128205; Directions</a>
+    </div>
+
+    <div class="places-grid">
+      <div class="place-card">
+        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80" alt="Mt. Rainier">
+        <div class="card-body">
+          <h3>Mt. Rainier National Park</h3>
+          <div class="desc">Iconic volcano at 14,411 feet. Visit Paradise area for wildflower meadows, Myrtle Falls, and stunning glacial views. Check road status morning-of at nps.gov/mora.</div>
+          <div class="card-footer">
+            <a href="https://maps.google.com/?q=Mount+Rainier+National+Park,WA" class="map-link">&#128205; Open in Maps</a>
+            <span class="tag tag-fee">$30/vehicle</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="drive-banner">
+      <div class="icon">&#128663;</div>
+      <div class="info">
+        <div class="route">Mt. Rainier &rarr; Portland</div>
+        <div class="time">~2 hr 15 min &bull; Back by ~6 PM</div>
+      </div>
+      <a href="https://maps.google.com/?saddr=Mount+Rainier+National+Park,WA&daddr=Portland,OR" class="map-btn">&#128205; Directions</a>
+    </div>
+
+    <div class="hotel-card">
+      <div class="hotel-icon">&#127976;</div>
+      <div class="hotel-info">
+        <div class="name">Hilton Portland Downtown</div>
+        <div class="details">Night 2 of 2</div>
+        <div class="conf-num">Conf #3445779058</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day-section">
+    <div class="day-header">
+      <div class="day-number"><span class="num">3</span><span class="label">DAY</span></div>
+      <div class="day-info">
+        <h2>Oregon Coast: Heceta Head + Bandon</h2>
+        <div class="date-tag">Monday, April 20</div>
+        <div class="weather-tag">Coast 55&deg;F | Windy | 40% rain chance</div>
+      </div>
+    </div>
+
+    <div class="drive-banner">
+      <div class="icon">&#128663;</div>
+      <div class="info">
+        <div class="route">Portland &rarr; Heceta Head Lighthouse</div>
+        <div class="time">~3.5 hrs &bull; Scenic coastal drive</div>
+      </div>
+      <a href="https://maps.google.com/?saddr=Portland,OR&daddr=Heceta+Head+Lighthouse,Florence,OR" class="map-btn">&#128205; Directions</a>
+    </div>
+
+    <div class="places-grid">
+      <div class="place-card">
+        <img src="https://images.unsplash.com/photo-1570641963303-92ce4845ed4c?w=800&q=80" alt="Heceta Head Lighthouse">
+        <div class="card-body">
+          <h3>Heceta Head Lighthouse</h3>
+          <div class="desc">One of the most photographed lighthouses on the Oregon Coast. Tours available April-October, 11 AM - 2 PM. Call ahead to confirm: 541-547-3416.</div>
+          <div class="card-footer">
+            <a href="https://maps.google.com/?q=Heceta+Head+Lighthouse,Florence,OR" class="map-link">&#128205; Open in Maps</a>
+            <span class="tag tag-free">Free entry / Parking fee</span>
+          </div>
+        </div>
+      </div>
+      <div class="place-card">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" alt="Bandon Beach">
+        <div class="card-body">
+          <h3>Bandon Beach</h3>
+          <div class="desc">Dramatic sea stacks, tide pools, and golden sand. Face Rock viewpoint is a must. Great for coastal photography, especially near sunset.</div>
+          <div class="card-footer">
+            <a href="https://maps.google.com/?q=Bandon+Beach,Bandon,OR" class="map-link">&#128205; Open in Maps</a>
+            <span class="tag tag-free">Free / Always open</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="drive-banner">
+      <div class="icon">&#128663;</div>
+      <div class="info">
+        <div class="route">Heceta Head &rarr; Bandon Beach &rarr; Eugene</div>
+        <div class="time">1 hr 49 min + 2 hr 42 min</div>
+      </div>
+      <a href="https://maps.google.com/?saddr=Heceta+Head+Lighthouse,OR&daddr=Bandon+Beach,OR&waypoints=Eugene,OR" class="map-btn">&#128205; Directions</a>
+    </div>
+
+    <div class="hotel-card">
+      <div class="hotel-icon">&#127976;</div>
+      <div class="hotel-info">
+        <div class="name">Home2 Suites by Hilton Eugene Downtown</div>
+        <div class="details">1 night &bull; Check-in 3 PM &bull; Check-out 12 PM</div>
+        <div class="conf-num">Conf #97965109</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day-section">
+    <div class="day-header">
+      <div class="day-number"><span class="num">4</span><span class="label">DAY</span></div>
+      <div class="day-info">
+        <h2>Samuel H. Boardman Scenic Corridor</h2>
+        <div class="date-tag">Tuesday, April 21</div>
+        <div class="weather-tag">Grants Pass 61&deg;F | Low 37&deg;F | Drier than coast</div>
+      </div>
+    </div>
+
+    <div class="drive-banner">
+      <div class="icon">&#128663;</div>
+      <div class="info">
+        <div class="route">Eugene &rarr; Samuel H. Boardman Scenic Corridor</div>
+        <div class="time">~3.5 hrs &bull; Leave by 12 PM &bull; Arrive ~3:30 PM</div>
+      </div>
+      <a href="https://maps.google.com/?saddr=Eugene,OR&daddr=Samuel+H+Boardman+State+Scenic+Corridor,OR" class="map-btn">&#128205; Directions</a>
+    </div>
+
+    <div class="places-grid">
+      <div class="place-card">
+        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&q=80" alt="Samuel H. Boardman">
+        <div class="card-body">
+          <h3>Samuel H. Boardman State Scenic Corridor</h3>
+          <div class="desc">12 miles of Oregon's most dramatic coastline. Natural bridges, sea arches, hidden beaches, and towering cliffs. Multiple viewpoints right off Highway 101.</div>
+          <div class="card-footer">
+            <a href="https://maps.google.com/?q=Samuel+H+Boardman+State+Scenic+Corridor,OR" class="map-link">&#128205; Open in Maps</a>
+            <span class="tag tag-free">Free / No fee</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="drive-banner">
+      <div class="icon">&#128663;</div>
+      <div class="info">
+        <div class="route">Samuel H. Boardman &rarr; Grants Pass</div>
+        <div class="time">~2 hrs &bull; Check in at night</div>
+      </div>
+      <a href="https://maps.google.com/?saddr=Samuel+H+Boardman+State+Scenic+Corridor,OR&daddr=Grants+Pass,OR" class="map-btn">&#128205; Directions</a>
+    </div>
+
+    <div class="hotel-card">
+      <div class="hotel-icon">&#127976;</div>
+      <div class="hotel-info">
+        <div class="name">Hampton Inn & Suites Grants Pass</div>
+        <div class="details">Night 1 of 3 &bull; Check-in 3 PM &bull; Check-out 11 AM</div>
+        <div class="conf-num">Conf #91414549</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 5 -->
+  <div class="day-section">
+    <div class="day-header">
+      <div class="day-number"><span class="num">5</span><span class="label">DAY</span></div>
+      <div class="day-info">
+        <h2>Crater Lake National Park</h2>
+        <div class="date-tag">Wednesday, April 22</div>
+        <div class="weather-tag">Grants Pass 63&deg;F | Crater Lake ~45&deg;F | Cold &amp; snow</div>
+      </div>
+    </div>
+
+    <div class="drive-banner">
+      <div class="icon">&#128663;</div>
+      <div class="info">
+        <div class="route">Grants Pass &rarr; Crater Lake National Park</div>
+        <div class="time">~2 hrs</div>
+      </div>
+      <a href="https://maps.google.com/?saddr=Grants+Pass,OR&daddr=Crater+Lake+National+Park,OR" class="map-btn">&#128205; Directions</a>
+    </div>
+
+    <div class="places-grid">
+      <div class="place-card">
+        <img src="https://images.unsplash.com/photo-1571943042356-5a4246452809?w=800&q=80" alt="Crater Lake">
+        <div class="card-body">
+          <h3>Crater Lake National Park</h3>
+          <div class="desc">The deepest lake in the US at 1,943 feet. Impossibly blue water in a volcanic caldera. Rim Drive may be partially closed due to snow in April — south/west viewpoints accessible.</div>
+          <div class="card-footer">
+            <a href="https://maps.google.com/?q=Crater+Lake+National+Park,OR" class="map-link">&#128205; Open in Maps</a>
+            <span class="tag tag-fee">$30/vehicle</span>
+            <span class="tag tag-warn">Rim Drive partially closed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="drive-banner">
+      <div class="icon">&#128663;</div>
+      <div class="info">
+        <div class="route">Crater Lake &rarr; Grants Pass</div>
+        <div class="time">~2 hrs back</div>
+      </div>
+      <a href="https://maps.google.com/?saddr=Crater+Lake+National+Park,OR&daddr=Grants+Pass,OR" class="map-btn">&#128205; Directions</a>
+    </div>
+
+    <div class="hotel-card">
+      <div class="hotel-icon">&#127976;</div>
+      <div class="hotel-info">
+        <div class="name">Hampton Inn & Suites Grants Pass</div>
+        <div class="details">Night 2 of 3</div>
+        <div class="conf-num">Conf #91414549</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 6 -->
+  <div class="day-section">
+    <div class="day-header">
+      <div class="day-number"><span class="num">6</span><span class="label">DAY</span></div>
+      <div class="day-info">
+        <h2>Redwood National Park</h2>
+        <div class="date-tag">Thursday, April 23</div>
+        <div class="weather-tag">Grants Pass 70&deg;F (warmest day!) | Redwoods ~55&deg;F</div>
+      </div>
+    </div>
+
+    <div class="drive-banner">
+      <div class="icon">&#128663;</div>
+      <div class="info">
+        <div class="route">Grants Pass &rarr; Redwood National Park</div>
+        <div class="time">~2.5 hrs</div>
+      </div>
+      <a href="https://maps.google.com/?saddr=Grants+Pass,OR&daddr=Redwood+National+Park,CA" class="map-btn">&#128205; Directions</a>
+    </div>
+
+    <div class="places-grid">
+      <div class="place-card">
+        <img src="https://images.unsplash.com/photo-1604519098301-e45e67839036?w=800&q=80" alt="Redwood National Park">
+        <div class="card-body">
+          <h3>Redwood National Park</h3>
+          <div class="desc">Home to the tallest trees on Earth, reaching over 370 feet. Walk among ancient giants in cathedral-like groves. A truly humbling experience.</div>
+          <div class="card-footer">
+            <a href="https://maps.google.com/?q=Redwood+National+Park,CA" class="map-link">&#128205; Open in Maps</a>
+            <span class="tag tag-free">Free entry</span>
+          </div>
+        </div>
+      </div>
+      <div class="place-card">
+        <img src="https://images.unsplash.com/photo-1614017881722-9f4a08ff79c2?w=800&q=80" alt="Fern Canyon">
+        <div class="card-body">
+          <h3>Fern Canyon</h3>
+          <div class="desc">50-foot walls covered in ferns — featured in Jurassic Park 2. Access via Davison Road (dirt, 7.5 mi). No reservation needed in April. Bring water shoes for creek crossings!</div>
+          <div class="card-footer">
+            <a href="https://maps.google.com/?q=Fern+Canyon,Prairie+Creek+Redwoods,CA" class="map-link">&#128205; Open in Maps</a>
+            <span class="tag tag-fee">$12 cash only</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="drive-banner">
+      <div class="icon">&#128663;</div>
+      <div class="info">
+        <div class="route">Redwood NP &rarr; Grants Pass</div>
+        <div class="time">~2.5 hrs back</div>
+      </div>
+      <a href="https://maps.google.com/?saddr=Redwood+National+Park,CA&daddr=Grants+Pass,OR" class="map-btn">&#128205; Directions</a>
+    </div>
+
+    <div class="hotel-card">
+      <div class="hotel-icon">&#127976;</div>
+      <div class="hotel-info">
+        <div class="name">Hampton Inn & Suites Grants Pass</div>
+        <div class="details">Night 3 of 3</div>
+        <div class="conf-num">Conf #91414549</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 7 -->
+  <div class="day-section">
+    <div class="day-header">
+      <div class="day-number"><span class="num">7</span><span class="label">DAY</span></div>
+      <div class="day-info">
+        <h2>Return to Portland</h2>
+        <div class="date-tag">Friday, April 24</div>
+        <div class="weather-tag">66&deg;F &rarr; 61&deg;F | Comfortable driving day</div>
+      </div>
+    </div>
+
+    <div class="drive-banner">
+      <div class="icon">&#128663;</div>
+      <div class="info">
+        <div class="route">Grants Pass &rarr; Portland (PDX)</div>
+        <div class="time">~4.5 hrs &bull; Leave by 7:30 AM &bull; Arrive ~12 PM</div>
+      </div>
+      <a href="https://maps.google.com/?saddr=Grants+Pass,OR&daddr=Portland+International+Airport,OR" class="map-btn">&#128205; Directions</a>
+    </div>
+
+    <div class="drive-banner" style="background: linear-gradient(135deg, var(--coral), #d4644b);">
+      <div class="icon">&#9992;</div>
+      <div class="info">
+        <div class="route">Portland (PDX) &rarr; Dallas (DAL) &rarr; Austin (AUS)</div>
+        <div class="time">Return car by 2 PM &bull; Flight departs 3:00 PM &bull; Arrive AUS 10:45 PM</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TIPS -->
+<div class="tips-section">
+  <div class="container">
+    <h2 class="section-title">Trip Tips & Reminders</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon">&#127757;</div>
+        <div class="tip-title">America the Beautiful Pass</div>
+        <div class="tip-desc">$80 annual pass covers all national parks. Pays for itself: Rainier ($30) + Crater Lake ($30) + Redwood. Buy at first park entrance.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">&#127783;</div>
+        <div class="tip-title">Pack Layers</div>
+        <div class="tip-desc">Rain jacket is essential. Warm layers for Rainier & Crater Lake. Windbreaker for the coast. Water shoes for Fern Canyon.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">&#128241;</div>
+        <div class="tip-title">Download Offline Maps</div>
+        <div class="tip-desc">Cell service gaps near Mt. Rainier, rural Oregon coast, and Crater Lake. Save Google Maps offline before each drive day.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">&#128176;</div>
+        <div class="tip-title">Bring Cash</div>
+        <div class="tip-desc">Redwood NP / Fern Canyon day-use fee is $12 cash only. No cards accepted at Gold Bluffs Beach kiosk.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">&#10052;</div>
+        <div class="tip-title">Check Road Status</div>
+        <div class="tip-desc">Morning of Day 2: nps.gov/mora for Rainier. Day 5: nps.gov/crla for Crater Lake. Trillium Lake road may still have snow.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">&#128181;</div>
+        <div class="tip-title">No Sales Tax!</div>
+        <div class="tip-desc">Oregon has no sales tax. Menu prices = what you pay (plus tip). Stock up on shopping in Portland or Eugene!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    Samarth & Prashita's PNW Adventure &bull; April 18-24, 2026<br>
+    <span style="opacity: 0.6; font-size: 0.75rem;">Built with love by your trip assistant</span>
+  </div>
+</footer>
+
+</body>
+</html>
