@@ -58,10 +58,10 @@ a:hover { text-decoration:underline; }
   </header>
 
   <div class="stats">
-    <div class="stat-card stat-blue"><div class="stat-num">16</div><div class="stat-label">Discovered</div></div>
-    <div class="stat-card stat-yellow"><div class="stat-num">0</div><div class="stat-label">Evaluated</div></div>
-    <div class="stat-card stat-green"><div class="stat-num">0</div><div class="stat-label">Applied</div></div>
-    <div class="stat-card stat-purple"><div class="stat-num">0</div><div class="stat-label">Interviews</div></div>
+    <div class="stat-card stat-blue"><div class="stat-num">16</div><div class="stat-label">Total Found</div></div>
+    <div class="stat-card stat-yellow"><div class="stat-num">14</div><div class="stat-label">Evaluated</div></div>
+    <div class="stat-card stat-green"><div class="stat-num">5</div><div class="stat-label">Top Picks</div></div>
+    <div class="stat-card stat-purple"><div class="stat-num">2</div><div class="stat-label">Skipped</div></div>
   </div>
 
   <div class="top-picks">
@@ -90,29 +90,29 @@ a:hover { text-decoration:underline; }
 
   <table>
     <thead>
-      <tr><th>#</th><th>Company</th><th>Role</th><th>Status</th><th>Notes</th></tr>
+      <tr><th>#</th><th>Company</th><th>Role</th><th>Score</th><th>Status</th><th>Notes</th></tr>
     </thead>
     <tbody>
-      <tr><td>001</td><td class="company">Dropbox</td><td>Senior Full Stack Engineer</td><td><span class="status status-discovered">Discovered</span></td><td class="notes">$203K-$274K, Remote/Austin</td></tr>
-      <tr><td>002</td><td class="company">Upside</td><td>Senior Full Stack Software Engineer II</td><td><span class="status status-discovered">Discovered</span></td><td class="notes">$180K-$210K, Remote/Hybrid</td></tr>
-      <tr><td>003</td><td class="company">Trend Micro</td><td>Senior Full Stack Software Engineer</td><td><span class="status status-discovered">Discovered</span></td><td class="notes">Hybrid Austin, ZTSA team</td></tr>
-      <tr><td>004</td><td class="company">General Motors</td><td>Senior Software Engineer Fullstack</td><td><span class="status status-discovered">Discovered</span></td><td class="notes">Hybrid Austin Innovation Center</td></tr>
-      <tr><td>005</td><td class="company">HeartFlow</td><td>Senior Software Engineer</td><td><span class="status status-discovered">Discovered</span></td><td class="notes">Remote, Austin/Mountain View</td></tr>
-      <tr><td>006</td><td class="company">Minted</td><td>Senior Software Engineer</td><td><span class="status status-discovered">Discovered</span></td><td class="notes">$135K-$178K, Austin</td></tr>
-      <tr><td>007</td><td class="company">Match Group</td><td>Senior Software Engineer</td><td><span class="status status-discovered">Discovered</span></td><td class="notes">Remote, dating platform</td></tr>
-      <tr><td>008</td><td class="company">Auctane</td><td>Senior Software Engineer</td><td><span class="status status-discovered">Discovered</span></td><td class="notes">Remote, shipping platform</td></tr>
-      <tr><td>009</td><td class="company">Collectly</td><td>Senior Software Engineer</td><td><span class="status status-discovered">Discovered</span></td><td class="notes">Python-first, healthcare</td></tr>
-      <tr><td>010</td><td class="company">Apple</td><td>Senior SE - Cloud UI</td><td><span class="status status-discovered">Discovered</span></td><td class="notes">Austin, frontend-focused</td></tr>
-      <tr><td>011</td><td class="company">Apple</td><td>Senior SE - Wallet Identity</td><td><span class="status status-discovered">Discovered</span></td><td class="notes">Austin</td></tr>
-      <tr><td>012</td><td class="company">Vanta</td><td>Senior Software Engineer, Fullstack</td><td><span class="status status-discovered">Discovered</span></td><td class="notes">Remote, security platform</td></tr>
-      <tr><td>013</td><td class="company">Rula</td><td>Senior Software Engineer</td><td><span class="status status-discovered">Discovered</span></td><td class="notes">Remote, mental health</td></tr>
-      <tr><td>014</td><td class="company">Close</td><td>Senior SE - Backend/Python</td><td><span class="status status-discovered">Discovered</span></td><td class="notes">100% Remote, profitable startup</td></tr>
-      <tr><td>015</td><td class="company">Onebrief</td><td>Senior Software Engineer, Full-stack</td><td><span class="status status-discovered">Discovered</span></td><td class="notes">All-remote, AI workflow</td></tr>
-      <tr><td>016</td><td class="company">Syrup</td><td>Senior Software Engineer, Full Stack</td><td><span class="status status-discovered">Discovered</span></td><td class="notes">Remote US</td></tr>
+      <tr><td>001</td><td class="company">Dropbox</td><td>Senior Full Stack Engineer</td><td><span style="color:var(--green);font-weight:700">4.5/5</span></td><td><span class="status status-evaluated">Evaluated</span></td><td class="notes">$203K-$274K, Remote/Austin. Top pick.</td></tr>
+      <tr><td>002</td><td class="company">Upside</td><td>Senior Full Stack SE II</td><td><span style="color:var(--green);font-weight:700">4.3/5</span></td><td><span class="status status-evaluated">Evaluated</span></td><td class="notes">$180K-$210K, Remote/Hybrid. Strong fit.</td></tr>
+      <tr><td>012</td><td class="company">Vanta</td><td>Senior SE, Fullstack</td><td><span style="color:var(--green);font-weight:700">4.2/5</span></td><td><span class="status status-evaluated">Evaluated</span></td><td class="notes">Remote, security unicorn. Great story fit.</td></tr>
+      <tr><td>010</td><td class="company">Apple</td><td>Senior SE - Cloud UI</td><td><span style="color:var(--green);font-weight:700">4.0/5</span></td><td><span class="status status-evaluated">Evaluated</span></td><td class="notes">Austin. Internal transfer advantage.</td></tr>
+      <tr><td>011</td><td class="company">Apple</td><td>Senior SE - Wallet Identity</td><td><span style="color:var(--green);font-weight:700">4.0/5</span></td><td><span class="status status-evaluated">Evaluated</span></td><td class="notes">Austin. Security aligns with patent.</td></tr>
+      <tr><td>014</td><td class="company">Close</td><td>Senior SE - Backend/Python</td><td><span style="color:var(--yellow);font-weight:700">3.8/5</span></td><td><span class="status status-evaluated">Evaluated</span></td><td class="notes">100% Remote. Python/Django match.</td></tr>
+      <tr><td>009</td><td class="company">Collectly</td><td>Senior Software Engineer</td><td><span style="color:var(--yellow);font-weight:700">3.7/5</span></td><td><span class="status status-evaluated">Evaluated</span></td><td class="notes">Python-first, healthcare fintech.</td></tr>
+      <tr><td>015</td><td class="company">Onebrief</td><td>Senior SE, Full-stack</td><td><span style="color:var(--yellow);font-weight:700">3.7/5</span></td><td><span class="status status-evaluated">Evaluated</span></td><td class="notes">All-remote, AI workflow. Defense-adjacent.</td></tr>
+      <tr><td>005</td><td class="company">HeartFlow</td><td>Senior Software Engineer</td><td><span style="color:var(--yellow);font-weight:700">3.6/5</span></td><td><span class="status status-evaluated">Evaluated</span></td><td class="notes">Remote, Austin. AI health tech.</td></tr>
+      <tr><td>013</td><td class="company">Rula</td><td>Senior Software Engineer</td><td><span style="color:var(--yellow);font-weight:700">3.6/5</span></td><td><span class="status status-evaluated">Evaluated</span></td><td class="notes">Remote, mental health platform.</td></tr>
+      <tr><td>016</td><td class="company">Syrup</td><td>Senior SE, Full Stack</td><td><span style="color:var(--yellow);font-weight:700">3.5/5</span></td><td><span class="status status-evaluated">Evaluated</span></td><td class="notes">Remote US. Verify comp.</td></tr>
+      <tr><td>003</td><td class="company">Trend Micro</td><td>Senior Full Stack SE</td><td><span style="color:var(--muted);font-weight:700">3.4/5</span></td><td><span class="status status-evaluated">Evaluated</span></td><td class="notes">Hybrid Austin. Java EE heavy.</td></tr>
+      <tr><td>004</td><td class="company">General Motors</td><td>Senior SE Fullstack</td><td><span style="color:var(--muted);font-weight:700">3.3/5</span></td><td><span class="status status-evaluated">Evaluated</span></td><td class="notes">Hybrid Austin. Enterprise, Java/Oracle.</td></tr>
+      <tr><td>007</td><td class="company">Match Group</td><td>Senior Software Engineer</td><td><span style="color:var(--muted);font-weight:700">3.2/5</span></td><td><span class="status status-evaluated">Evaluated</span></td><td class="notes">Remote. Java/.NET focus.</td></tr>
+      <tr><td>006</td><td class="company">Minted</td><td>Senior Software Engineer</td><td><span style="color:var(--red);font-weight:700">3.0/5</span></td><td><span class="status status-rejected">Skip</span></td><td class="notes">$135K-$178K. Below target comp.</td></tr>
+      <tr><td>008</td><td class="company">Auctane</td><td>Senior Software Engineer</td><td><span style="color:var(--red);font-weight:700">3.0/5</span></td><td><span class="status status-rejected">Skip</span></td><td class="notes">Below target comp.</td></tr>
     </tbody>
   </table>
 
-  <div class="updated">Last scan: April 7, 2026 — Target: Senior Software Engineer, Austin/Remote</div>
+  <div class="updated">Last scan: April 7, 2026 — Evaluated: April 7, 2026 — Target: Senior Software Engineer, Austin/Remote</div>
 </div>
 </body>
 </html>
